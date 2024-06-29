@@ -7,14 +7,11 @@ body {
 .page-content {
   padding: 20px;
   text-align: center;
-  margin-left: 60px; 
+  margin-top: 60px; 
 }
 
-.content {
-  margin-left: 60px;
-  padding: 20px;
-}
-
-.side-navbar:hover + .content {
-  margin-left: 200px; 
+@media (max-width: 768px) {
+  .page-content {
+    margin-top: 60px;
+  }
 }

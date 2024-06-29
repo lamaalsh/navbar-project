@@ -1,0 +1,14 @@
+.page-content {
+    padding: 20px;
+    text-align: center;
+    margin-top: 60px; 
+  }
+  
+  @media (max-width: 768px) {
+    .page-content {
+      margin-top: 60px;
+    }
+  }
+  body{
+    background-image: linear-gradient(to right, #ff8a00, #da1b60);
+  }

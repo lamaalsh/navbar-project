@@ -1,32 +1,40 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faInfoCircle, faPhone, faBars } from '@fortawesome/free-solid-svg-icons';
+import './Navbar.css';
 
 const Navbar = () => {
-    return (
-        <div className="side-navbar">
-               <div className="logo">
-        <Link to="/">
-          <img src="/in2infologo.png" alt="Logo" />
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <nav className="navbar">
+     
+      <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
+      <div className="navbar-logo">
+        <Link to="/" onClick={() => setIsOpen(false)}>
+          <img src="/removebg.png" alt="Logo" />
         </Link>
       </div>
-          <div className="menu-items">
-            <Link to="/" className="menu-button">
-              <span className="menu-icon">🏠</span>
-              <span className="menu-text">Home</span>
-            </Link>
-            <Link to="/about" className="menu-button">
-              <span className="menu-icon">ℹ️</span>
-              <span className="menu-text">About</span>
-            </Link>
-            <Link to="/contact" className="menu-button">
-              <span className="menu-icon">📞</span>
-              <span className="menu-text">Contact</span>
-            </Link>
-          </div>
-        </div>
-      );
-    };
+        <Link to="/" className="navbar-link" onClick={() => setIsOpen(false)}>
+          <FontAwesomeIcon icon={faHome} /> Home
+        </Link>
+        <Link to="/about" className="navbar-link" onClick={() => setIsOpen(false)}>
+          <FontAwesomeIcon icon={faInfoCircle} /> About
+        </Link>
+        <Link to="/contact" className="navbar-link" onClick={() => setIsOpen(false)}>
+          <FontAwesomeIcon icon={faPhone} /> Contact
+        </Link>
+      </div>
+      <div className="navbar-toggle" onClick={toggleNavbar}>
+        <FontAwesomeIcon icon={faBars} />
+      </div>
+    </nav>
+  );
+};
 
 export default Navbar;
