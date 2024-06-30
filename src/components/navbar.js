@@ -13,13 +13,14 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-     
-      <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
-      <div className="navbar-logo">
+       <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
+      <div className="navbar-logo" >
         <Link to="/" onClick={() => setIsOpen(false)}>
           <img src="/removebg.png" alt="Logo" />
         </Link>
-      </div>
+      </div></div>
+      <div className='navbar-bar'>
+      <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
         <Link to="/" className="navbar-link" onClick={() => setIsOpen(false)}>
           <FontAwesomeIcon icon={faHome} /> Home
         </Link>
@@ -29,6 +30,7 @@ const Navbar = () => {
         <Link to="/contact" className="navbar-link" onClick={() => setIsOpen(false)}>
           <FontAwesomeIcon icon={faPhone} /> Contact
         </Link>
+      </div>
       </div>
       <div className="navbar-toggle" onClick={toggleNavbar}>
         <FontAwesomeIcon icon={faBars} />

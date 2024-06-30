@@ -1,23 +1,25 @@
-
 .navbar {
   display: flex;
-  justify-content:center;
+  justify-content: space-between;
   align-items: center;
   background-color: #333;
-  padding: 20px 20px;
+padding-right: 5px;
+
   position: fixed;
-  width: 100%;
+  width: 99.9%;
   top: 0;
   z-index: 1000;
 }
 
 .navbar-logo img {
   height: 40px;
+  padding-left: 15px;
 }
 
 .navbar-links {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .navbar-link {
@@ -30,7 +32,7 @@
 }
 
 .navbar-link:hover {
-  color: #ddd;
+  color: #dddddd;
 }
 
 .navbar-toggle {
@@ -40,8 +42,14 @@
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    justify-content:space-between;
     align-items: flex-start;
+  }
+
+  .navbar-logo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .navbar-links {
@@ -50,7 +58,7 @@
     width: 100%;
     background-color: #333;
     position: absolute;
-    top: 60px;
+    top: 25px;
     left: 0;
     padding: 10px 0;
   }
@@ -70,4 +78,7 @@
     color: white;
     cursor: pointer;
   }
+}
+.navbar-bar{
+padding-right: 15px;
 }
